@@ -23,11 +23,11 @@ public class StructureBuilder implements Builder {
     @Override
     public void sortWordsInGroup() {
         for (List<String> list : structure.values()) {
-            list.sort((String o1, String o2) -> {
-                if (o1.length() == o2.length()) {
-                    return o1.compareTo(o2);
+            list.sort((String s1, String s2) -> {
+                if (s1.length() == s2.length()) {
+                    return s1.compareTo(s2);
                 }
-                return o2.length() - o1.length();
+                return s2.length() - s1.length();
             });
         }
     }
