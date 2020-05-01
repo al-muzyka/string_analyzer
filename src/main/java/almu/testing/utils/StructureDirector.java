@@ -1,6 +1,5 @@
 package almu.testing.utils;
 
-
 public class StructureDirector {
     private Builder builder;
 
@@ -9,6 +8,8 @@ public class StructureDirector {
     }
 
     public void construct(String inputStr) {
-        // todo
+        builder.splitSentenceByWordGroup(inputStr);
+        builder.filterGroupsWithSmallSize(1);
+        builder.sortWordsInGroup();
     }
 }
