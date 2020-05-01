@@ -1,19 +1,23 @@
 package almu.testing;
 
+import almu.testing.utils.StructureBuilder;
+import almu.testing.utils.StructureDirector;
+
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        //  Get string from input stream
         System.out.print("Enter a string : ");
-        Scanner scanner = new Scanner(System. in);
+        Scanner scanner = new Scanner(System.in);
         String inputString = scanner.nextLine();
-        System.out.println("String read from console is : \n"+inputString);
+
+        //  Build the desired structure
+        StructureBuilder builder = new StructureBuilder();
+        StructureDirector director = new StructureDirector(builder);
+        director.construct(inputString);
+
+        // Print user-friendly format
+        System.out.println(builder.getResult());
     }
 }
